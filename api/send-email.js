@@ -29,7 +29,7 @@ export default async function handler(req, res) {
     try {
         await transport.sendMail({
             from: `Bitmail <${process.env.NODEMAILER_MAIL}>`,
-            to,
+            to: process.env.NODEMAILER_MAIL,
             subject,
             text,
         });
