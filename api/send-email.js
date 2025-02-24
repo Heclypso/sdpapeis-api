@@ -18,7 +18,7 @@ export default async function handler(req, res) {
     const transport = nodemailer.createTransport({
         host: 'smtp.gmail.com',
         port: 465,
-        secure: true,
+        secure: true,   
         auth: {
             user: process.env.NODEMAILER_MAIL,
             pass: process.env.NODEMAILER_PASS,
@@ -29,9 +29,9 @@ export default async function handler(req, res) {
     try {
         await transport.sendMail({
             from: `Bitmail <${process.env.NODEMAILER_MAIL}>`,
-            to: process.env.NODEMAILER_MAIL,
+            to,
             subject,
-            text,
+            html: text,
         });
 
         return res.status(200).json({ message: "Email enviado com sucesso" });
