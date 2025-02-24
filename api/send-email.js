@@ -10,7 +10,7 @@ export default async function handler(req, res) {
     }
 
     if (req.method !== "POST") {
-        return res.status(405).json({ message: "Método não permitido" });
+        return res.status(405).json({ message: "Método nao permitido" });
     }
 
     const { to, subject, text } = req.body;
@@ -18,7 +18,7 @@ export default async function handler(req, res) {
     const transport = nodemailer.createTransport({
         host: 'smtp.gmail.com',
         port: 465,
-        secure: true,   
+        secure: true,
         auth: {
             user: process.env.NODEMAILER_MAIL,
             pass: process.env.NODEMAILER_PASS,
