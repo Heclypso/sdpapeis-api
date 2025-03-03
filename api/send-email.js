@@ -1,7 +1,7 @@
 import nodemailer from "nodemailer"; 
 
 export default async function handler(req, res) {
-    res.setHeader("Access-Control-Allow-Origin", "https://sdpapeis.vercel.app");
+    res.setHeader("Access-Control-Allow-Origin", "https://sdpapeis-iota.vercel.app");
     res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
     res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
